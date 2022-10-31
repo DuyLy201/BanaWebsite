@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:wght@400;600;700&display=swap');
+
+.logo {
+    font-family: Lora;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.nav {
+    padding: 20px 31px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}

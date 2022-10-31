@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:wght@400;600;700&display=swap');
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.content {
+    font-family: 'Lora';
+}
+
+.content h3 {
+    font-size: 2.25rem;
+    margin: 0;
+}
+
+.content p {
+    margin: 0;
+    font-size: 1.3125rem;
+    opacity: 0.5;
+}
+
+.flex-horizontal {
+    display: flex;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    align-items: center;
+    padding: 35px 0;
+}
+
+.card button {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 1.3125rem;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-weight: medium;
+    padding: 10px 20px;
+}

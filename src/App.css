@@ -1,0 +1,15 @@
+@import-normalize;
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:wght@400;600;700&display=swap');
+
+.main {
+    margin-top: 81.5px;
+    padding: 10px 100px;
+}
+
+h1 {
+    font-family: Inter;
+    font-size: 47px;
+    font-weight: 600;
+}
