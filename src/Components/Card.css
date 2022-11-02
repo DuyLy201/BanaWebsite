@@ -15,6 +15,7 @@
 .content h3 {
     font-size: 2.25rem;
     margin: 0;
+    font-weight: 700;
 }
 
 .content p {
@@ -30,18 +31,28 @@
 .card {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     align-items: center;
     padding: 35px 0;
 }
 
-.card button {
+.sound {
+    display: flex;
+    gap: 20px;
+}
+
+.sound button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
     background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     color: white;
     border: none;
     font-size: 1.3125rem;
     border-radius: 20px;
     font-family: 'Inter';
     font-weight: medium;
-    padding: 10px 20px;
+    padding: 10px 15px;
 }

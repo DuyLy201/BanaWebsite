@@ -5,6 +5,8 @@
     font-family: Lora;
     font-weight: bold;
     font-size: 36px;
+    text-decoration: none;
+    color: black;
 }
 
 .nav {
@@ -12,7 +14,11 @@
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     position: fixed;
     background-color: white;
-    width: 100%;
+    width: 100vw;
     z-index: 1;
     top: 0;
+}
+
+.search_icon {
+    position: absolute;
 }
