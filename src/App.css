@@ -10,7 +10,7 @@
     gap: 61px;
     flex-direction: column;
     justify-content: center;
-    width: clamp(400px, 70vw, 1200px);
+    width: clamp(400px, 70vw, 1400px);
 }
 
 h1 {
