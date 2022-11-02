@@ -34,7 +34,8 @@ h1 {
 }
 
 .nav {
-    display: flex;
+    box-sizing: border-box;
+    display: grid;
 }
 
 .search {

@@ -1,8 +1,9 @@
-import React from 'react'
-import './Navbar.css'
-import { AiOutlineSearch } from 'react-icons/ai'
-import {Link, useNavigate} from 'react-router-dom';
-import {useState} from 'react';
+import React from "react";
+import "./Navbar.css";
+import { AiOutlineSearch } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { IconContext } from "react-icons";
 
 function Navbar() {
   const [searchValue, setSearchValue] = useState("");
@@ -11,22 +12,32 @@ function Navbar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(searchValue);
-    if(searchValue !== "") {
-      navigate("/search", {state: {searchValue: searchValue}});
+    if (searchValue !== "") {
+      navigate("/search", { state: { searchValue: searchValue } });
     }
-  }
+  };
   return (
     <nav className="nav">
-      <Link to={"/"} style={{ textDecoration: 'none' }}>
-      <div className='logo'>Bahnaric</div>
+      <Link to={"/"} style={{ textDecoration: "none" }}>
+        <div className="logo">Bahnaric</div>
       </Link>
-        <form className="search" onSubmit={handleSubmit}>
-          <AiOutlineSearch className='search_icon'/>
-          <input type="text" placeholder='Search for any words or phrases' onChange={e => setSearchValue(e.target.value)}></input>
+      <div className="search">
+        <form onSubmit={handleSubmit}>
+          <IconContext.Provider value={{size: "20px"}}>
+          <AiOutlineSearch className="search_icon" />
+          </IconContext.Provider>
+          <input
+            type="text"
+            placeholder="Search for any words or phrases"
+            onChange={(e) => setSearchValue(e.target.value)}
+          ></input>
         </form>
-        <button>Log in</button>
+      </div>
+      <div className="profile">
+      <button>Log in</button>
+      </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

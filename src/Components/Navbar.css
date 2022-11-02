@@ -14,11 +14,60 @@
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     position: fixed;
     background-color: white;
-    width: 100vw;
+    width: 100%;
     z-index: 1;
     top: 0;
+    display: inline-grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .search_icon {
     position: absolute;
+    left: 0;
+    padding: 10px 10px
+}
+
+form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 430px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 20px 10px 50px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.profile {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile button {
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    color: white;
+    font-size: 1.3125rem;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-weight: medium;
+    padding: 10px 20px;
 }
