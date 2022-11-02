@@ -1,6 +1,8 @@
 import React from "react";
 import "./Card.css";
 import { AiFillSound } from "react-icons/ai";
+import { FaRegBookmark } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
 function Card({ word, BinhDinh, GiaLai, KonTum }) {
   return (
@@ -30,6 +32,9 @@ function Card({ word, BinhDinh, GiaLai, KonTum }) {
             </button>
           ) : null}
         </div>
+        <IconContext.Provider value={{size: "45px"}}>
+        <div className="bookmark"><FaRegBookmark/></div>
+        </IconContext.Provider>
       </div>
     </div>
   );
