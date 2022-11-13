@@ -47,10 +47,11 @@ function WordList({ api }) {
   return (
     <>
       <div className="wordlist">
-        {data.map(({ BinhDinh, GiaLai, KonTum, name }) => (
+        {data.map(({ BinhDinh, GiaLai, KonTum, name, pos }) => (
           <Card
             id={name}
             word={name}
+            pos={pos}
             BinhDinh={BinhDinh}
             GiaLai={GiaLai}
             KonTum={KonTum}

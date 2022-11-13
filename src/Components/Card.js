@@ -4,12 +4,12 @@ import { AiFillSound } from "react-icons/ai";
 import { FaRegBookmark } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-function Card({ word, BinhDinh, GiaLai, KonTum }) {
+function Card({ word, pos, BinhDinh, GiaLai, KonTum }) {
   return (
     <div className="card">
       <div className="flex-vertical content">
         <h3>{word}</h3>
-        <p>{word}</p>
+        <p>{pos}</p>
       </div>
       <div className="flex-horizontal">
         <div className="sound">

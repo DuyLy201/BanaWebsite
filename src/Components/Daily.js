@@ -27,6 +27,7 @@ function Daily() {
         <Card
           id={word.name}
           word={word.name}
+          pos={word.pos}
           BinhDinh={word.BinhDinh}
           GiaLai={word.GiaLai}
           KonTum={word.KonTum}
