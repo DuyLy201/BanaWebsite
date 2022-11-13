@@ -13,24 +13,18 @@ function Card({ word, BinhDinh, GiaLai, KonTum }) {
       </div>
       <div className="flex-horizontal">
         <div className="sound">
-          {BinhDinh === "Y" ? (
-            <button>
+            <button disabled={BinhDinh === "-"}>
               <AiFillSound />
-              <span>Binh Dinh</span>
+              <span>BinhDinh</span>
             </button>
-          ) : null}
-          {GiaLai === "Y" ? (
-            <button>
+            <button disabled={GiaLai === "-"}>
               <AiFillSound />
               <span>Gia Lai</span>
             </button>
-          ) : null}
-          {KonTum === "Y" ? (
-            <button>
+            <button disabled={KonTum === "-"}>
               <AiFillSound />
               <span>KonTum</span>
             </button>
-          ) : null}
         </div>
         <IconContext.Provider value={{size: "45px"}}>
         <div className="bookmark"><FaRegBookmark/></div>
