@@ -25,6 +25,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 .footer {
@@ -41,4 +42,80 @@ h1 {
 
 .search {
     position: relative;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 85px;
+    width: 100%;
+    max-width: 800px;
+    flex: 1;
+}
+
+.login form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.background {
+    width: 280px;
+}
+
+.auth_input {
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+}
+
+.auth_input label {
+    font-size: 1rem;
+}
+
+.auth_input input {
+    font-size: 1.3125rem;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #DCDCDC;
+    width: 100%;
+}
+
+.auth_input input:focus {
+    outline: none;
+    color: black;
+    border-bottom: 1px solid black;
+    transition: all 0.1s ease-in;
+}
+
+.auth_input input:focus::placeholder {
+    color: transparent;
+    transition: all 0.1s ease-in;
+}
+
+.submit p {
+    font-family: Inter;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.submit a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+nav button, .login button {
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    color: white;
+    font-size: 1.3125rem;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-weight: 500;
+    padding: 10px 20px;
 }

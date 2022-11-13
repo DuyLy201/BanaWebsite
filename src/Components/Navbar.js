@@ -9,6 +9,11 @@ function Navbar() {
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(searchValue);
@@ -34,7 +39,7 @@ function Navbar() {
         </form>
       </div>
       <div className="profile">
-      <button>Log in</button>
+      <button onClick={(e) => handleLogin(e)}>Log in</button>
       </div>
     </nav>
   );
