@@ -13,10 +13,7 @@ function Card({ word, pos, BinhDinh, GiaLai, KonTum }) {
         gender: "male",
       })
       .then((res) => {
-        let base64sound;
         let audio;
-        base64sound = res.data.speech;
-        console.log(base64sound);
         audio = new Audio(`data:audio/wav;base64,${res.data.speech}`);
         audio.play();
       });
