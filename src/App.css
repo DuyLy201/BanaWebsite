@@ -69,6 +69,7 @@ h1 {
     display: flex;
     flex-direction: column;
     font-family: Inter;
+    gap: 0.3125rem;
 }
 
 .auth_input label {
@@ -107,7 +108,11 @@ h1 {
     border-bottom: 1px solid black;
 }
 
-nav button, .login button {
+a, a:visited, a:hover, a:active {
+    color: inherit;
+  }
+
+nav button, .login_form button , .dialog-login{
     cursor: pointer;
     background-color: black;
     border: none;
@@ -119,3 +124,88 @@ nav button, .login button {
     font-weight: 500;
     padding: 10px 20px;
 }
+
+.error {
+    color: #C63333;
+    font-size: 0.75rem;
+}
+
+.dialog {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    background-color: #eee;
+    padding: 40px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;;
+    background-color: #999;
+    opacity: 0.8;
+}
+
+.close-button{
+    border-radius: 50%;
+  padding: 0.5em;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  color: black;
+  position: relative;
+    align-self: flex-end
+}
+
+.dialog a {
+    text-decoration: none;
+}
+
+.close-button::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: black;
+    width: 1px;
+    left: 12px;
+    top: 5px;
+    bottom: 5px;
+    transform: rotate(45deg);
+  }
+  .close-button::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: black;
+    height: 1px;
+    top:12px;
+    left: 5px;
+    right: 5px;
+    transform: rotate(45deg);
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .nav-username {
+    font-size: 1rem;
+    font-family: Inter;
+    font-weight: 500;
+  }
