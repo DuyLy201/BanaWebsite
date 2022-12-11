@@ -55,13 +55,13 @@ function Login() {
   return (
     <div className="login">
       <div className="login_form">
-        <h1>Log in</h1>
+        <h1>Đăng nhập</h1>
         <form onSubmit={(e) => handleLogin(e)}>
           <div className="auth_input">
-            <label htmlFor="user">Username</label>
+            <label htmlFor="user">Tên đăng nhập</label>
             <input
               type="text"
-              placeholder="Enter your username"
+              placeholder="Nhập tên đăng nhập"
               onChange={(e) => setUsername(e.target.value)}
             ></input>
             {usernameError != "" && (
@@ -69,10 +69,10 @@ function Login() {
             )}
           </div>
           <div className="auth_input">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Mật khẩu</label>
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Nhập mật khẩu"
               onChange={(e) => setPassword(e.target.value)}
             ></input>
             {passwordError != "" && (
@@ -80,9 +80,9 @@ function Login() {
             )}
           </div>
           <div className="submit">
-            <button>Log in</button>
+            <button>Đăng nhập</button>
             <p>
-              No account? <Link to="..\signup" relative="path">Sign up</Link>.
+              Chưa có tài khoản? <Link to="..\signup" relative="path">Đăng kí ngay</Link>.
             </p>
           </div>
         </form>

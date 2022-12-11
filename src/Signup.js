@@ -78,31 +78,31 @@ function Signup() {
   return (
     <div className="login">
       <div className="login_form">
-        <h1>Sign up</h1>
+        <h1>Đăng kí</h1>
         <form onSubmit={(e) => handleSignUp(e)}>
         <div className="auth_input">
             <label htmlFor="email">Email</label>
-            <input type="email" placeholder="Enter your email" onChange={(e) => {setEmail(e.target.value)}}></input>
+            <input type="email" placeholder="Nhập email của bạn" onChange={(e) => {setEmail(e.target.value)}}></input>
             {emailError != "" && <span className="error">{emailError}</span>}
           </div>
           <div className="auth_input">
-            <label htmlFor="user">Username</label>
-            <input type="text" placeholder="Enter your username" onChange={(e) => {setUsername(e.target.value)}}></input>
+            <label htmlFor="user">Tên đăng nhập</label>
+            <input type="text" placeholder="Nhập tên đăng nhập" onChange={(e) => {setUsername(e.target.value)}}></input>
             {usernameError != "" && <span className="error">{usernameError}</span>}
           </div>
           <div className="auth_input">
-            <label htmlFor="password">Password</label>
-            <input type="password" placeholder="Enter your password" onChange={(e) => {setPassword(e.target.value)}}></input>
+            <label htmlFor="password">Mật khẩu</label>
+            <input type="password" placeholder="Nhập mật khẩu" onChange={(e) => {setPassword(e.target.value)}}></input>
             {passwordError != "" && <span className="error">{passwordError}</span>}
           </div>
           <div className="auth_input">
-            <label htmlFor="password">Re-enter password</label>
-            <input type="password" placeholder="Re-enter your password" onChange={(e) => {setReenterPassword(e.target.value)}}></input>
+            <label htmlFor="password">Nhập lại mật khẩu</label>
+            <input type="password" placeholder="Nhập lại mật khẩu" onChange={(e) => {setReenterPassword(e.target.value)}}></input>
             {reenterPasswordError != "" && <span className="error">{passwordError}</span>}
           </div>
           <div className="submit">
-            <button>Sign up</button>
-            <p>Already have an account? <Link to="../login" relative="path">Log in</Link>.</p>
+            <button>Đăng kí</button>
+            <p>Đã có tài khoản? <Link to="../login" relative="path">Đăng nhập ngay</Link>.</p>
           </div>
         </form>
       </div>
