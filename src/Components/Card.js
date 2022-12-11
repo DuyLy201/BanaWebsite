@@ -1,11 +1,71 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Card.css";
 import { AiFillSound } from "react-icons/ai";
-import { FaRegBookmark } from "react-icons/fa";
+import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import axios from "axios";
+import AuthService from "../AuthService";
+import { AuthContext } from "../App";
 
-function Card({ word, pos, BinhDinh, GiaLai, KonTum }) {
+function Card({ word, pos, BinhDinh, GiaLai, KonTum, id }) {
+  const { state } = useContext(AuthContext)
+  const [isBookmarked, setIsBookmarked] = useState();
+
+  useEffect(() => {
+    if (state.username) {
+      const token = state.token;
+      axios.post(
+        "http://localhost:5000/api/check_bookmark",
+        { id },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      ).then((result) => {
+        setIsBookmarked(result.data.msg)
+      })
+    }
+  }, [state.username]);
+
+  const handleBookmark = (e) => {
+    e.preventDefault()
+    if (state.username) {
+      const token = state.token;
+      axios
+        .post(
+          "http://localhost:5000/api/update_bookmark",
+          {
+            id,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => {
+          bookmarked();
+        })
+    }
+  };
+
+  const bookmarked = async () => {
+    if (state.username) {
+      const token = state.token;
+      const result = await axios.post(
+        "http://localhost:5000/api/check_bookmark",
+        { id },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setIsBookmarked(result.data.msg);
+    }
+  };
+
   const playSound = (e) => {
     axios
       .post("https://www.ura.hcmut.edu.vn/tts/speak", {
@@ -29,7 +89,7 @@ function Card({ word, pos, BinhDinh, GiaLai, KonTum }) {
         <div className="sound">
           <button disabled={BinhDinh === "-"} onClick={(e) => playSound(e)}>
             <AiFillSound />
-            <span>BinhDinh</span>
+            <span>Bình Định</span>
           </button>
           <button disabled={GiaLai === "-"} onClick={(e) => playSound(e)}>
             <AiFillSound />
@@ -37,14 +97,16 @@ function Card({ word, pos, BinhDinh, GiaLai, KonTum }) {
           </button>
           <button disabled={KonTum === "-"} onClick={(e) => playSound(e)}>
             <AiFillSound />
-            <span>KonTum</span>
+            <span>Kon Tum</span>
           </button>
         </div>
-        <IconContext.Provider value={{ size: "45px" }}>
-          <div className="bookmark">
-            <FaRegBookmark />
-          </div>
-        </IconContext.Provider>
+        {state.username ? (
+          <IconContext.Provider value={{ size: "45px" }}>
+            <div className="bookmark" onClick={(e) => handleBookmark(e)}>
+              {isBookmarked == "true" ? <FaBookmark /> : <FaRegBookmark />}
+            </div>
+          </IconContext.Provider>
+        ) : null}
       </div>
     </div>
   );

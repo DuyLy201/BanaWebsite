@@ -112,6 +112,14 @@ a, a:visited, a:hover, a:active {
     color: inherit;
   }
 
+a:focus {
+    outline: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
 nav button, .login_form button , .dialog-login{
     cursor: pointer;
     background-color: black;
@@ -208,4 +216,8 @@ nav button, .login_form button , .dialog-login{
     font-size: 1rem;
     font-family: Inter;
     font-weight: 500;
+  }
+
+  .search-page {
+    margin-top: 200px;
   }

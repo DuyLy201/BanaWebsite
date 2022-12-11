@@ -8,9 +8,9 @@ function Home() {
     <>
       <Intro />
       <div className="main">
-        <h1>World of the day</h1>
+        <h1>Đơn ngữ của ngày</h1>
         <Daily/>
-        <h1>Browse words/phrases</h1>
+        <h1>Danh sách đơn ngữ</h1>
         <WordList api={"http://localhost:5000/api/dict"}/>
       </div>
     </>

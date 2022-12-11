@@ -14,8 +14,8 @@ function Search() {
     }, [state])
   return (
     <>
-      <div className="main">
-        <h1>Search results for "{search}"</h1>
+      <div className="search-page main">
+        <h1>Kết quả tìm kiếm cho "{search}"</h1>
         <WordList api={search == "" ? null : `http://localhost:5000/api/search?searched_word=${search}`}/>
       </div>
     </>

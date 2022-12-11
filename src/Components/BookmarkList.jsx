@@ -4,25 +4,27 @@ import Pagination from "./Pagination";
 import "./WordList.css";
 import axios from "axios";
 import { useState, useEffect, Component } from "react";
+import AuthService from "../AuthService";
 
-function WordList({ api }) {
+function BookmarkList() {
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [currentPage, setCurrentPage] = useState(api);
+  const [currentPage, setCurrentPage] = useState("http://localhost:5000/api/bookmark");
   const [currentPageNum, setCurrentPageNum] = useState(1);
   const [nextPage, setNextPage] = useState();
   const [prevPage, setPrevPage] = useState();
 
-  useEffect(() => {
-    setCurrentPage(api);
-  }, [api]);
+  const token = AuthService.getCurrentUser().access_token;
 
   useEffect(() => {
     let cancel;
     setIsLoaded(false);
     axios
-      .get(currentPage, new axios.CancelToken((c) => (cancel = c)))
+      .get(currentPage, {headers:{
+        'Authorization' : `Bearer ${token}`
+      }}, new axios.CancelToken((c) => (cancel = c)))
       .then((res) => {
+        console.log(res);
         setIsLoaded(true);
         setData(res.data.results);
         setNextPage(res.data.next);
@@ -43,12 +45,16 @@ function WordList({ api }) {
   }
 
   if (!isLoaded) return <h2>Loading...</h2>;
+  if(data == []) return (
+    <h2>No words bookmarked yet</h2>
+  )
+
   return (
     <>
       <div className="wordlist">
         {data.map(({ BinhDinh, GiaLai, KonTum, name, pos, id }) => (
           <Card
-            key={id}
+          key={id}
             id={id}
             word={name}
             pos={pos}
@@ -67,4 +73,4 @@ function WordList({ api }) {
   );
 }
 
-export default WordList;
+export default BookmarkList;

@@ -3,21 +3,20 @@ import "./Navbar.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { IconContext } from "react-icons";
 import AuthService from "../AuthService";
+import { AuthContext } from "../App";
 
 function Navbar() {
+  const { state, dispatch } = useContext(AuthContext);
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
-  const [currentUser, setCurrentUser] = useState();
+  // const [currentUser, setCurrentUser] = useState(state.username);
 
-  useEffect(()=>{
-    const user = AuthService.getCurrentUser();
-    if(user) {
-      setCurrentUser(user);
-    }
-  })
+  // useEffect(() => {
+  //   setCurrentUser(state.username)
+  // }, [state.username])
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -26,13 +25,14 @@ function Navbar() {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    AuthService.logout();
-    setCurrentUser(undefined);
+    dispatch({
+      type: "LOGOUT",
+    });
+    navigate("/");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchValue);
     if (searchValue !== "") {
       navigate("/search", { state: { searchValue: searchValue } });
     }
@@ -49,22 +49,24 @@ function Navbar() {
           </IconContext.Provider>
           <input
             type="text"
-            placeholder="Search for any words or phrases"
+            placeholder="Tra cứu đơn ngữ bất kì"
             onChange={(e) => setSearchValue(e.target.value)}
           ></input>
         </form>
       </div>
       <div className="profile">
-        {currentUser ? (
+        {state.username ? (
           <>
-            <span className="nav-username">{currentUser.username}</span>
-            <IconContext.Provider value={{size: "42px"}}>
-            <CgProfile />
-            </IconContext.Provider>
-            <button onClick={(e) => handleLogout(e)}>Log out</button>
+            <Link className="to-profile" to={"/profile"} style={{ textDecoration: "none" }}>
+              <span className="nav-username">{state.username}</span>
+              <IconContext.Provider value={{ size: "42px" }}>
+                <CgProfile />
+              </IconContext.Provider>
+            </Link>
+            <button onClick={(e) => handleLogout(e)}>Đăng xuất</button>
           </>
         ) : (
-          <button onClick={(e) => handleLogin(e)}>Log in</button>
+          <button onClick={(e) => handleLogin(e)}>Đăng nhập</button>
         )}
       </div>
     </nav>

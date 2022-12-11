@@ -14,7 +14,6 @@ function Daily() {
         "http://localhost:5000/api/daily",
         new axios.CancelToken((c) => (cancel = c))
       ).then((response) => {
-        console.log(response);
         setIsLoaded(true);
       setWord(response.data.results);
       });
@@ -25,7 +24,7 @@ function Daily() {
     <div>
       {isLoaded ? (
         <Card
-          id={word.name}
+          id={word.id}
           word={word.name}
           pos={word.pos}
           BinhDinh={word.BinhDinh}

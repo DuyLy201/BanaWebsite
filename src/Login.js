@@ -1,8 +1,9 @@
 import React from "react";
 import background from "./Assets/Images/Bahnaric1.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
+import {AuthContext} from "./App"
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -10,6 +11,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -31,11 +33,17 @@ function Login() {
             password,
           })
           .then((response) => {
-            let token = response.data.access_token;
-            localStorage.setItem("user", JSON.stringify({
-              "access_token" : token,
-              "username": username,
-            }))
+            dispatch({
+              type: "LOGIN",
+              payload: {
+                user: username,
+                token: response.data.access_token
+              }
+            })
+            // localStorage.setItem("user", JSON.stringify({
+            //   "access_token" : token,
+            //   "username": username,
+            // }))
             navigate("/");
           }).catch((err) => {
             setUsernameError("Invalid username or password");
