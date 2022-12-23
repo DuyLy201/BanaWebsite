@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Programming Integration Project Course 221: Bana Speech Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Goal
+We separate the frontend and backend implementation to two separate repositories for better management. This repository is solely for the frontend implementation of the Bana Speech Web project for the Programming Integration Project Course, Semester 221, Group 3
 
-## Available Scripts
+## Technology
+- For the techstack in frontend, we used ReactJS - a JavaScript library for building user interfaces. React makes it easier to create interactive user interfaces with a component based hierarchy.
+- For HTTP requests, we used Axios - a promise based HTTP client for the browser - for sending requests to the backend.
+- For layout and styling of the web page, plain CSS is used for better customization.
 
-In the project directory, you can run:
+## Run locally
+### Prerequisites
+Make sure your devices has the latest version of **npm**
+### Clone the repository and change to its directory
+```{bash}
+git clone https://github.com/DoAnBana/bana-speech-web.git
+```
 
-### `npm start`
+```{bash}
+cd bana-speech-web
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Install the requirements
+Install the packages using npm
+```{bash}
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Start the app
+Start the frontend by running the following command:
+```{bash}
+npm start
+```
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Demo the app
+After running both frontend and backend source code, to try the app, you can login with following information:
+```
+username: hoa
+password: 123456
+```
