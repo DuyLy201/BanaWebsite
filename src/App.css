@@ -1,0 +1,223 @@
+@import-normalize;
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:wght@400;600;700&display=swap');
+
+.main {
+    margin-top: 81.5px;
+    padding: 10px 200px;
+    display: flex;
+    gap: 61px;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+h1 {
+    font-family: Inter;
+    font-size: 47px;
+    font-weight: 600;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.footer {
+    height: 360px;
+    background-color: #DCDCDC;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.nav {
+    box-sizing: border-box;
+    display: grid;
+}
+
+.search {
+    position: relative;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 85px;
+    width: 100%;
+    max-width: 800px;
+    flex: 1;
+}
+
+.login form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.background {
+    width: 280px;
+}
+
+.auth_input {
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    gap: 0.3125rem;
+}
+
+.auth_input label {
+    font-size: 1rem;
+}
+
+.auth_input input {
+    font-size: 1.3125rem;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #DCDCDC;
+    width: 100%;
+}
+
+.auth_input input:focus {
+    outline: none;
+    color: black;
+    border-bottom: 1px solid black;
+    transition: all 0.1s ease-in;
+}
+
+.auth_input input:focus::placeholder {
+    color: transparent;
+    transition: all 0.1s ease-in;
+}
+
+.submit p {
+    font-family: Inter;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.submit a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+  }
+
+a:focus {
+    outline: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
+nav button, .login_form button , .dialog-login{
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    color: white;
+    font-size: 1.3125rem;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.error {
+    color: #C63333;
+    font-size: 0.75rem;
+}
+
+.dialog {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    background-color: #eee;
+    padding: 40px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;;
+    background-color: #999;
+    opacity: 0.8;
+}
+
+.close-button{
+    border-radius: 50%;
+  padding: 0.5em;
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  color: black;
+  position: relative;
+    align-self: flex-end
+}
+
+.dialog a {
+    text-decoration: none;
+}
+
+.close-button::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: black;
+    width: 1px;
+    left: 12px;
+    top: 5px;
+    bottom: 5px;
+    transform: rotate(45deg);
+  }
+  .close-button::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: black;
+    height: 1px;
+    top:12px;
+    left: 5px;
+    right: 5px;
+    transform: rotate(45deg);
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .nav-username {
+    font-size: 1rem;
+    font-family: Inter;
+    font-weight: 500;
+  }
+
+  .search-page {
+    margin-top: 200px;
+  }

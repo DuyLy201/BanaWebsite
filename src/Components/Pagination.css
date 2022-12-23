@@ -1,0 +1,16 @@
+.pagination {
+    font-family: Inter;
+    font-size: 27;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    margin-top: 81px;
+}
+
+.pagination button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: Inter;
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:wght@400;600;700&display=swap');
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.content {
+    font-family: 'Lora';
+}
+
+.content h3 {
+    font-size: 2.25rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.content p {
+    margin: 0;
+    font-size: 1.3125rem;
+    opacity: 0.5;
+}
+
+.flex-horizontal {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    align-items: center;
+    padding: 35px 0;
+}
+
+.bookmark {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sound {
+    display: flex;
+    gap: 20px;
+}
+
+.sound button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+    cursor: pointer;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    color: white;
+    border: none;
+    font-size: 1.3125rem;
+    border-radius: 20px;
+    font-family: 'Inter';
+    font-weight: medium;
+    padding: 10px 15px;
+}
+
+.sound button:disabled {
+    opacity: 0.5;
+}
