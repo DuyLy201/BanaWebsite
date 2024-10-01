@@ -9,6 +9,9 @@ import Login from "./Login";
 import Signup from "./Signup";
 import { createContext, useEffect, useReducer, useState } from "react";
 import Profile from "./Profile";
+import Monolingual from "./Monolingual";
+import Bilingual from "./Bilingual";
+import Translation from "./Translation";
 
 export const AuthContext = createContext();
 
@@ -73,6 +76,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/monolingual" element={<Monolingual />} />
+            <Route path="/bilingual" element={<Bilingual />} />
+            <Route path="/translation" element={<Translation />} />
           </Routes>
           <Footer />
         </div>
