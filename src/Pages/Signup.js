@@ -1,9 +1,9 @@
 import React from "react";
-import background from "./Assets/Images/Bahnaric2.png";
+import background from "../Assets/Images/Bahnaric2.png";
 import {Link} from 'react-router-dom';
 import { useState } from "react";
 import axios from "axios";
-import Dialog from "./Components/Dialog";
+import Dialog from "../Components/Dialog";
 
 function Signup() {
     const [username, setUsername] = useState("");

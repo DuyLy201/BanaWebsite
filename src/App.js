@@ -2,16 +2,15 @@ import "./Components/WordList";
 import Navbar from "./Components/Navbar";
 import "./App.css";
 import Footer from "./Components/Footer";
-import Home from "./Home";
+import Home from "./Pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./Search";
-import Login from "./Login";
-import Signup from "./Signup";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
 import { createContext, useEffect, useReducer, useState } from "react";
 import Profile from "./Profile";
-import Monolingual from "./Monolingual";
-import Bilingual from "./Bilingual";
-import Translation from "./Translation";
+import Bilingual from "./Pages/Bilingual";
+import Translation from "./Pages/Translation";
 
 export const AuthContext = createContext();
 
@@ -76,7 +75,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/monolingual" element={<Monolingual />} />
             <Route path="/bilingual" element={<Bilingual />} />
             <Route path="/translation" element={<Translation />} />
           </Routes>

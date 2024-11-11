@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
+import React from "react";
+
 import "./Navbar.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { IconContext } from "react-icons";
-import AuthService from "../AuthService";
+// import AuthService from "../AuthService";
 import { AuthContext } from "../App";
 
 function Navbar() {
@@ -38,12 +40,6 @@ function Navbar() {
     }
   };
 
-// ToDo => Create handle for mono + bi + translation
-const handleMonolingual = (e) => {
-  e.preventDefault();
-  navigate("/monolingual");
-};
-
 const handleBilingual = (e) => {
   e.preventDefault();
   navigate("/bilingual");
@@ -57,9 +53,9 @@ const handleTranslation = (e) => {
   return (
     <nav className="nav">
       <Link to={"/"} style={{ textDecoration: "none" }}>
-        <div className="logo">Home</div>
+        <div className="logo">Tổng quan</div>
       </Link>
-      <div className="search">
+      {/* <div className="search">
         <form onSubmit={handleSubmit}>
           <IconContext.Provider value={{ size: "20px" }}>
             <AiOutlineSearch className="search_icon" />
@@ -70,16 +66,13 @@ const handleTranslation = (e) => {
             onChange={(e) => setSearchValue(e.target.value)}
           ></input>
         </form>
-      </div>
+      </div> */}
       <div className="profile">
         <div>
-          <button onClick={(e) => handleMonolingual(e)}>monolingual</button>
+          <button onClick={(e) => handleBilingual(e)}>Ngữ liệu văn bản</button>
         </div>
         <div>
-          <button onClick={(e) => handleBilingual(e)}>bilingual</button>
-        </div>
-        <div>
-          <button onClick={(e) => handleTranslation(e)}>translation</button>
+          <button onClick={(e) => handleTranslation(e)}>Dịch máy</button>
         </div >        
         {state.username ? (
           <>
@@ -89,10 +82,10 @@ const handleTranslation = (e) => {
                 <CgProfile />
               </IconContext.Provider>
             </Link>
-            <button onClick={(e) => handleLogout(e)}>Logout</button>
+            <button onClick={(e) => handleLogout(e)}>Đăng xuất</button>
           </>
         ) : (
-          <button onClick={(e) => handleLogin(e)}>Login</button>
+          <button onClick={(e) => handleLogin(e)}>Đăng nhập</button>
         )}
       </div>
     </nav>

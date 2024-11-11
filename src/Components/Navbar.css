@@ -18,7 +18,7 @@
     z-index: 1;
     top: 0;
     display: inline-grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 5fr;
     align-items: center;
     justify-content: center;
 }

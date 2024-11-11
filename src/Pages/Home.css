@@ -1,6 +1,5 @@
-.intro {
+.main {
     width: 100%;
-    background-color: #DCDCDC;
     height: 450px;
     display: flex;
     gap: 50px;
@@ -9,18 +8,20 @@
     align-items: center;
 }
 
-.intro p {
+.main p {
     font-family: Inter;
     font-weight: 500;
-    width: clamp(45ch, 50%, 600px);
-    text-align: center;
+    /* width: clamp(45ch, 50%, 600px); */
+    text-align: left;
     font-size: 21px;
+    padding: 10px 31px;
+
 }
 
-.intro h1 {
+.main h1 {
     font-family: 'Lora';
     font-weight: bold;
-    font-size: 62px;
+    font-size: 60px;
     /* width: 630px; */
     text-align: center;
 }

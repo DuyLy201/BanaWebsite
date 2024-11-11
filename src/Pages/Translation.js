@@ -1,11 +1,15 @@
 import React from 'react'
+import Intro from "../Components/Intro";
 
 function Translation() {
   return (
-    <div className='translation'>
+    <>
+      <Intro />
+      <div className="main" >
         <h1>Translation</h1>
-    </div>
-  )
+      </div>
+    </>
+  );
 }
 
 export default Translation

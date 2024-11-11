@@ -1,9 +1,9 @@
 import React from "react";
-import background from "./Assets/Images/Bahnaric1.png";
+import background from "../Assets/Images/Bahnaric1.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import axios from "axios";
-import {AuthContext} from "./App"
+import {AuthContext} from "../App"
 
 function Login() {
   const [username, setUsername] = useState("");
