@@ -7,3 +7,14 @@
     font-family: Lora;
     font-weight: 900;
 }
+
+.flex-container{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 300px;
+    margin-right: 200px;
+    margin-top: 10px;
+    gap: 100px;
+    line-height: 2;
+}
+

@@ -2,18 +2,20 @@ import "../Components/WordList";
 import WordList from "../Components/WordList";
 import Intro from "../Components/Intro";
 import Daily from "../Components/Daily";
+import myImage from "../Assets/Images/Bilingual.jpg";
 import './Home.css'
 
 function Home() {
   return (
     <>
       <Intro />
+      <div style={{ width: '100vw' }} >
+      <img src={myImage}  alt="Dân tộc Bahna"/>
+      </div>
       <div className="main">
-        <div>
-          <h1>Dân tộc Bahna</h1>
-        </div>
-        <div>
-        <p>Dân tộc Ba Na (Ba Na) là một trong những dân tộc thuộc ngữ hệ Môn – Khmer. Họ
+        <div className="bahna">
+        <h1>Dân tộc Bahna</h1>
+        <p style={{lineHeight:1.5}}>Dân tộc Ba Na (Ba Na) là một trong những dân tộc thuộc ngữ hệ Môn – Khmer. Họ
           là dân tộc có số dân đông nhất trong những dân tộc nói tiếng Môn – Khmer miền
           Nam Trung Bộ. Người Ba Na cư trú ở các tỉnh Kon Tum, Gia Lai, Bình Định và Phú
           Yên với dân số khoảng 287.000 người (Tổng cục thống kê, 2019). Tại Kon Tum,
@@ -25,7 +27,7 @@ function Home() {
           các huyện phía Tây tại Phú Yên. Về mặt dân tộc học, người Ba Na phân thành các
           nhánh Gơ la, Tơ-Lô, Giơ Lâng, Kon Kơ-đeh , Kơ Pơng Kông, Kriêm.
         </p>
-        <p>
+        <p style={{lineHeight:1.5}}>
           Người Ba Na tự gọi mình là Ba Na. Tộc danh này được một số nhà nghiên cứu trước
           đây đã gọi, như trong sách "Bộ lạc Ba Na ở Kon Tum" của P.Guilleminet, xuất bản
           bản năm 1952, trong cuốn "Mọi Kon Tum" của Nguyễn Kinh Chi và Nguyễn Đổng
