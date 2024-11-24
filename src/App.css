@@ -29,7 +29,7 @@ h1 {
 }
 
 .footer {
-    height: 360px;
+    /* height: 360px; */
     background-color: #DCDCDC;
     width: 100%;
     margin-top: 80px;
