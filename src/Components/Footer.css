@@ -8,13 +8,17 @@
     font-weight: 900;
 }
 
-.flex-container{
+/* .flex-container{
     display: flex;
     flex-wrap: nowrap;
     margin-left: 300px;
     margin-right: 200px;
     margin-top: 10px;
     gap: 100px;
-    line-height: 2;
-}
+} */
 
+.flex-container{
+    /* justify-content: center;
+    align-items: center;
+    width: 100%; */
+}

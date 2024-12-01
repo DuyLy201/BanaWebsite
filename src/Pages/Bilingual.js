@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import WordList from "../Components/WordList";
 import Intro from "../Components/Intro";
 // import Daily from "../Components/Daily";
@@ -6,16 +6,27 @@ import './Bilingual.css';
 import { IconContext } from "react-icons";
 import { AiOutlineSearch } from "react-icons/ai";
 import myImage from "../Assets/Images/Bilingual.jpg";
+import axios from 'axios';
 
 function Bilingual() {
   const [searchValue, setSearchValue] = useState('');
   const [language, setLanguage] = useState('BinhDinh');
+  const [data, setData] = useState([]);
+  const [showResults, setShowResults] = useState(false);
   
   const handleSearch = (e) => {
-    setSearchValue(e.target.value);
-  };
+    setSearchValue(e.currentTarget.value);
 
-
+    axios
+    .get(`http://127.0.0.1:5000/api/search?searched_word=${e.currentTarget.value}`)
+    .then((response) => {
+      console.log(response.data);
+      setData(response.data.results);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
   return (
     <>
       <Intro />
@@ -29,7 +40,7 @@ function Bilingual() {
       </div>
       <div className="container">
       <div className='search'>
-        <form style={{display:'block',marginBottom:'50px'}}>
+        <div style={{marginBottom:'50px', position: 'relative', display: 'flex', width: '600px'}}>
             <IconContext.Provider value={{ size: "20px" }}>
               <AiOutlineSearch className="search_icon" />
             </IconContext.Provider>
@@ -38,8 +49,20 @@ function Bilingual() {
               placeholder="Tra cứu đơn ngữ bất kì"
               value={searchValue}
               onChange={handleSearch}
+              style={{width: '100%'}}
+              onFocus={() => setShowResults(true)}
+              onBlur={() => setShowResults(false)}
             />
-        </form>
+
+            {showResults && data.length > 0 && searchValue.length > 0 && <div style={{position: 'absolute', top: '50px', left: 0, right: 0, backgroundColor: 'white', zIndex: '100', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', height: 500, overflowY: "scroll"}}>
+              {data.map((item, index) => {
+                return (
+                  <div key={item.id} style={{padding: '10px', borderBottom: '1px solid #e0e0e0', cursor: 'pointer'}}>
+                    {item.tiengViet}
+                  </div>
+                )
+              })}</div>}
+        </div>
         <div className='search_buttons'>
           <button onClick={() => {
             setLanguage('BinhDinh');
