@@ -11,6 +11,7 @@ import { createContext, useEffect, useReducer, useState } from "react";
 import Profile from "./Profile";
 import Bilingual from "./Pages/Bilingual";
 import Translation from "./Pages/Translation";
+import SearchResult from "./Pages/SearchResult";
 
 export const AuthContext = createContext();
 
@@ -77,6 +78,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/bilingual" element={<Bilingual />} />
             <Route path="/translation" element={<Translation />} />
+            <Route path="/searchresult" element={<SearchResult />} />
           </Routes>
           <Footer />
         </div>

@@ -7,18 +7,29 @@ import { IconContext } from "react-icons";
 import { AiOutlineSearch } from "react-icons/ai";
 import myImage from "../Assets/Images/Bilingual.jpg";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Bilingual() {
   const [searchValue, setSearchValue] = useState('');
   const [language, setLanguage] = useState('BinhDinh');
   const [data, setData] = useState([]);
   const [showResults, setShowResults] = useState(false);
-  
+  const navigate = useNavigate();
+
+  const handleOnClickSearchValue = (item) => {
+    // navigate(`/translation/${item.id}`);
+    navigate("/searchresult");
+  };
+
+  useEffect(() => {
+    setSearchValue("");
+  }, [language]);
+
   const handleSearch = (e) => {
     setSearchValue(e.currentTarget.value);
-
+  
     axios
-    .get(`http://127.0.0.1:5000/api/search?searched_word=${e.currentTarget.value}`)
+    .get(`http://127.0.0.1:5000/api/search?searched_word=${e.currentTarget.value}&language=${language}`)
     .then((response) => {
       console.log(response.data);
       setData(response.data.results);
@@ -26,7 +37,7 @@ function Bilingual() {
     .catch((error) => {
       console.log(error);
     });
-  }
+  };
   return (
     <>
       <Intro />
@@ -35,7 +46,7 @@ function Bilingual() {
       </div>
       <div className='search_text'>
         <h1 style={{display:'block', marginBottom:'30px', marginTop:'20px'}}>Kho ngữ liệu song ngữ tiếng Ba-na</h1>
-        <h3 style={{display:'block', marginBottom:'50px',fontSize:30,fontWeight:'bold'}}>Tra cứu tiếng Ba-na và nghe phát âm từ ba phương ngữ Bình Định,
+        <h3 style={{display:'block', marginBottom:'50px',fontSize:30,fontWeight:'bold'}}>Tra cứu tiếng Ba-na từ ba phương ngữ Bình Định,
         Kon Tum, Gia Lai</h3>
       </div>
       <div className="container">
@@ -51,13 +62,13 @@ function Bilingual() {
               onChange={handleSearch}
               style={{width: '100%'}}
               onFocus={() => setShowResults(true)}
-              onBlur={() => setShowResults(false)}
+              onBlur={() => setTimeout(() => setShowResults(false), 200)} // Delay hiding results
             />
 
             {showResults && data.length > 0 && searchValue.length > 0 && <div style={{position: 'absolute', top: '50px', left: 0, right: 0, backgroundColor: 'white', zIndex: '100', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', height: 500, overflowY: "scroll"}}>
               {data.map((item, index) => {
                 return (
-                  <div key={item.id} style={{padding: '10px', borderBottom: '1px solid #e0e0e0', cursor: 'pointer'}}>
+                  <div key={item.id} style={{padding: '10px', borderBottom: '1px solid #e0e0e0', cursor: 'pointer'}} onClick={() => handleOnClickSearchValue(item)}>  
                     {item.tiengViet}
                   </div>
                 )
