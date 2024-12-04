@@ -6,9 +6,26 @@ import myImage from "../Assets/Images/Bilingual.jpg";
 
 function Translation() {
   const [searchValue, setSearchValue] = useState('');
+  const [language, setLanguage] = useState('BinhDinh');
+  const [data, setData] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+
+  useEffect(() => {
+    setSearchValue("");
+  }, [language]);
 
   const handleSearch = (e) => {
     setSearchValue(e.currentTarget.value);
+  
+    axios
+    .post(`faws.gvlab.org/fablab/ura/llama/bahnar/api/translate/vi_ba`,{region: language, text: searchValue}) // update api translation here
+    .then((response) => {
+      console.log(response.data);
+      setData(response.data.results);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   return (
@@ -36,7 +53,17 @@ function Translation() {
             rows="10"
             style={{width: '100%', border: 'none'}}
           />
-          <div className="translation-right">Row 1, Col 2</div>
+          <div className="translation-right">
+            Hiển thị kết quả ở đây
+            {/* {showResults && data.length > 0 && searchValue.length > 0 && <div style={{position: 'absolute', top: '50px', left: 0, right: 0, backgroundColor: 'white', zIndex: '100', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', height: 500, overflowY: "scroll"}}>
+              {data.map((item, index) => {
+                return (
+                  <div key={item.id} style={{padding: '10px', borderBottom: '1px solid #e0e0e0', cursor: 'pointer'}} onClick={() => handleOnClickSearchValue(item)}>  
+                    {item.tiengViet}
+                  </div>
+                )
+              })}</div>} */}
+          </div>
         </div>
           <button  className='button-container'>
             Dịch

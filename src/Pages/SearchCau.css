@@ -19,7 +19,7 @@
   }
 
   .result-column-right {
-    flex: 3;
+    flex: 2;
     margin: 10px;
     padding: 10px;
     background-color: #fff; /* Optional: Add background color */
@@ -30,8 +30,4 @@
   .result-column p {
     margin: 0;
     padding: 5px 0;
-  }
-
-  .related-item:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
   }

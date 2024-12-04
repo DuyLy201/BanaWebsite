@@ -1,4 +1,4 @@
-.container{
+.bilingual_container{
     display: flex;
     flex-wrap: nowrap;
     margin-top: 10px;
@@ -40,3 +40,7 @@
     flex-direction: column;
     margin-top: 20px;
 }
+
+.search-result-item:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+  }

@@ -12,6 +12,7 @@ import Profile from "./Profile";
 import Bilingual from "./Pages/Bilingual";
 import Translation from "./Pages/Translation";
 import SearchResult from "./Pages/SearchResult";
+import SearchCau from "./Pages/SearchCau";
 
 export const AuthContext = createContext();
 
@@ -79,6 +80,7 @@ function App() {
             <Route path="/bilingual" element={<Bilingual />} />
             <Route path="/translation" element={<Translation />} />
             <Route path="/searchresult" element={<SearchResult />} />
+            <Route path="/searchcau" element={<SearchCau />} />
           </Routes>
           <Footer />
         </div>

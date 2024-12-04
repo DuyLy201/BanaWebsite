@@ -18,7 +18,7 @@ function Bilingual() {
 
   const handleOnClickSearchValue = (item) => {
     // navigate(`/translation/${item.id}`);
-    navigate("/searchresult");
+    navigate('/searchresult', { state: { selectedItem: item, language: language} });
   };
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function Bilingual() {
         <h3 style={{display:'block', marginBottom:'50px',fontSize:30,fontWeight:'bold'}}>Tra cứu tiếng Ba-na từ ba phương ngữ Bình Định,
         Kon Tum, Gia Lai</h3>
       </div>
-      <div className="container">
+      <div className="bilingual_container">
       <div className='search'>
         <div style={{marginBottom:'50px', position: 'relative', display: 'flex', width: '600px'}}>
             <IconContext.Provider value={{ size: "20px" }}>
@@ -65,10 +65,10 @@ function Bilingual() {
               onBlur={() => setTimeout(() => setShowResults(false), 200)} // Delay hiding results
             />
 
-            {showResults && data.length > 0 && searchValue.length > 0 && <div style={{position: 'absolute', top: '50px', left: 0, right: 0, backgroundColor: 'white', zIndex: '100', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', height: 500, overflowY: "scroll"}}>
+            {showResults && data.length > 0 && searchValue.length > 0 && <div style={{position: 'absolute', top: '50px', left: 0, right: 0, backgroundColor: 'white', zIndex: '100', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', height: 525}}>
               {data.map((item, index) => {
                 return (
-                  <div key={item.id} style={{padding: '10px', borderBottom: '1px solid #e0e0e0', cursor: 'pointer'}} onClick={() => handleOnClickSearchValue(item)}>  
+                  <div key={item.id} className="search-result-item" style={{padding: '10px', borderBottom: '1px solid #e0e0e0', cursor: 'pointer', transition: 'background-color 0.3s ease'}} onClick={() => handleOnClickSearchValue(item)}>  
                     {item.tiengViet}
                   </div>
                 )
