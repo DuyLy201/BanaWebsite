@@ -31,6 +31,12 @@ function Signup() {
             setUsernameError("Please provide a username");
             error = true;
         };
+        if (username.includes(' ')) {
+          setUsernameError('Username cannot contain spaces!');
+          error = true;
+          return;
+        }
+    
         if(email === "")  {
             setEmailError("Please provide an email");
             error = true;
