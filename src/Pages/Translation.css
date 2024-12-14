@@ -9,7 +9,7 @@
     border-radius: 8px;
     padding: 10px; 
     font-size: 40px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 
@@ -50,14 +50,22 @@
 }
 
 .button-container{
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
     margin-top: 30px;
-    /* padding: 10px; */
     width: 200px;
     height: 60px;
     font-size: 36px;
     padding: 10px;
     border-radius: 8px;
+    cursor: pointer; */
+    margin-top: 30px;
+    display: block;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: bold;
     cursor: pointer;
+    width: auto;
+
 }
